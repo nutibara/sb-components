@@ -20,11 +20,16 @@ export interface Props {
     *Si quiere todo capitalizado
     */
     allCaps?: boolean;
-     
+
     /**
     * Customizar color de la etiqueta
     */
-     fontColor?: string;
+    fontColor?: string;
+
+    /**
+   * Customizar color de la etiqueta
+   */
+    backgroundColor?: string;
 }
 
 
@@ -33,13 +38,14 @@ export const MyLabel = ({
     color = 'primary',
     fontColor,
     label = 'No label',
-    size = 'normal'
+    size = 'normal',
+    backgroundColor = 'transparent'
 }: Props) => {
 
     return (
-        <span 
+        <span
             className={`label ${size} text-${color}`}
-            style={{ color: fontColor }}>
+            style={{ color: fontColor, backgroundColor }}>
             {allCaps ? label.toUpperCase() : label}
         </span>
     )
